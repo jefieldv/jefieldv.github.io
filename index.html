@@ -3,11 +3,68 @@
     #hname{
       text-align: center;
     }
-
+    article{
+      position: fixed;
+      width:  70%;
+      padding: 30px;
+      background-color: orange;
+      overflow: auto;
+      z-index: 0;
+      transform-origin: 0 50%;
+    }
+    article:after{
+      position: absolute;
+      content: '';
+      left: 100%;
+    }
+    nav{
+      position: fixed;
+      left: -15em;
+      border-color: orange;
+      border-right: 40px solid orange;
+      box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2)
+      z-index: 1;
+      cursor: pointer;
+    }
+    nav:after{
+      position: absolute;
+      width: 0;
+      height: 0;
+      right: -70px;
+      top: 50%;
+      border-width: 15px 15px;
+      border-style: solid;
+      border-color: transparent transparent transparent orange;
+    }
+    nav ul{
+      width: 15em;
+      list-style-type: none;
+      font-size: 20px;
+    }
+    article, article:after, nav, nav *{
+      transition: all 1000ms ease;
+    }
+    nav:hover ~ article:after{
+      left: 60%;
+    }
+    nav li{
+      color: black;
+      padding: 5%;
+    }
   </style>
   <html>
     <body>
-        <h1 id="hname">James Field</h1>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About Me</li>
+        </ul>
+      </nav>
+      <article>
+        <h1 id="hname">Jimbo Baggins</h1>
+        <h2 id="wheader">Welcome to my woderful site, take a step inside</h2>
+
         <p>I'm hosted with GitHub Pages.</p>
+      </article>
     </body>
   </html>
